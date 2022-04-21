@@ -46,7 +46,7 @@ public class MannequinController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
-		return "user/login";
+		return "account/login";
 	}
 	
 	@RequestMapping(value = "/loginTry", method = RequestMethod.POST)
@@ -72,7 +72,13 @@ public class MannequinController {
 	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signUp() {
-		return "user/signUp";
+		return "account/signUp";
+	}
+	
+	@RequestMapping(value = "/myMannequin", method = RequestMethod.GET)
+	public String myMannequin() {
+		
+		return "account/myMannequin";
 	}
 	
 }

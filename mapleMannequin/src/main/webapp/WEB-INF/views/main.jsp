@@ -9,7 +9,6 @@
 <jsp:include page="inc/link.jsp"></jsp:include>
 <jsp:include page="inc/script.jsp"></jsp:include>
 <script type="text/javascript">
-	
  	$(document).ready(function() {
 		$('#change').click(function(){
 			$.ajax({
@@ -29,9 +28,10 @@
 </head>
 <body>
 <h1>${sessionScope.id }</h1>
-<div class="col-sm-3">
+<div class="col-sm-6">
  <c:if test="${!empty sessionScope.id }">
   <a href="${pageContext.request.contextPath }/logout" class="btn btn-lg red">Logout</a>
+  <a href="${pageContext.request.contextPath }/myMannequin" class="btn btn-lg red">My Mannequin</a>
  </c:if>
  <c:if test="${empty sessionScope.id }">
   <a href="${pageContext.request.contextPath }/login" class="btn btn-lg red">Sign in</a>
