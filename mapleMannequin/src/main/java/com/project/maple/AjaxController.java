@@ -19,11 +19,13 @@ public class AjaxController {
 	public ResponseEntity<String> getImg(HttpServletRequest request){
 		String result = "";
 		String id = request.getParameter("itemId");
-		
+		String equipName = request.getParameter("equipName");
 		Mannequin mannequin2 = new Mannequin();
 		mannequin2.setDefaultSkin(2016);
-		mannequin2.getAllItemSet().put("Hat", Integer.parseInt(id));
 		
+		if (mannequin2.getAllItemSet().containsKey(equipName)) {
+			mannequin2.getAllItemSet().put(equipName, Integer.parseInt(id));
+		}
 		result = mannequin2.getMannequin();
 		
 		ResponseEntity<String> entity = new ResponseEntity<String>(result, HttpStatus.OK);
