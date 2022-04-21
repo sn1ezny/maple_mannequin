@@ -51,7 +51,7 @@
             <div class="row text-center">
                 <h1 class="heading-title"> Buttons Style </h1>
             </div>
-
+ 
             <div class="row pad-15">
                 <div class="col-sm-3">
                     <a href="#" class="btn btn-lg red">Download</a>
