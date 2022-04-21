@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.project.function.Mannequin;
 
 @Controller
-public class HomeController {
+public class MannequinController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
