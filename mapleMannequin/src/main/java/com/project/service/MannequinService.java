@@ -1,5 +1,9 @@
 package com.project.service;
 
-public interface MannequinService {
+import com.project.data.UserDTO;
 
+public interface MannequinService {
+	
+	public UserDTO loginUser(UserDTO userDTO);
+	
 }
