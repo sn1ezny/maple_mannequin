@@ -4,7 +4,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 
-public class FunctionList {
+public class Mannequin {
 	
 	final static int MAPLE_VERSION = 362;
 	final static String REGION = "KMS";
@@ -12,7 +12,7 @@ public class FunctionList {
 	String defaultPos = "stand1";
 	LinkedHashMap<String, Integer> allItemMap = new LinkedHashMap<String, Integer>();
 	
-	public FunctionList() {
+	public Mannequin() {
 		allItemMap.put("Hair", null);
 		allItemMap.put("Face", null);
 		allItemMap.put("Overall", null);

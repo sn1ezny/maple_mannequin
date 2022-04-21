@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.project.function.FunctionList;
+import com.project.function.Mannequin;
 
 @Controller
 public class HomeController {
@@ -17,7 +17,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String main(Model model) {
-		FunctionList func = new FunctionList();
+		Mannequin func = new Mannequin();
 		func.getAllItemSet().put("Hat", 1002140);
 		func.getAllItemSet().put("FaceA", 1012083);
 		String manne = func.getMannequin();
