@@ -7,6 +7,26 @@
 <meta charset="UTF-8">
 <title>Main : Maple Mannequin</title>
 <jsp:include page="inc/link.jsp"></jsp:include>
+<script type="text/javascript">
+ 	$(document).ready(function() {
+		$('#idbtn').click(function(){
+			$.ajax({
+				url:'${pageContext.request.contextPath }/userCheck',
+				data:{"id":$('#id').val()},
+				success:function(rdata){
+					if(rdata=='iddup'){
+						rdata="아이디 중복";
+					}else{
+						rdata="아이디 사용가능"
+					}
+					$('#idmsg').html(rdata);
+				}
+			});
+		});
+ 	});
+ </script>
+
+
 </head>
 <body>
 
@@ -17,10 +37,18 @@
 
 <h1>Maple Mannequin</h1>
 
-<img src="https://maplestory.io/api/character/%7B%22itemId%22%3A2000%2C%22version%22%3A%22231%22%7D%2C%7B%22itemId%22%3A12000%2C%22version%22%3A%22231%22%7D%2C%7B%22itemId%22%3A1012215%2C%22animationName%22%3A%22default%22%2C%22version%22%3A%22231%22%7D/stand1/0?showears=false&amp;showLefEars=false&amp;showHighLefEars=undefined&amp;resize=1&amp;name=&amp;flipX=false&amp;bgColor=0,0,0,0" alt="" class="renderable-instance" draggable="false" style="position: relative; touch-action: none;">
-<img src="https://maplestory.io/api/character/%7B%22itemId%22%3A2000%2C%22region%22%3A%22KMS%22%2C%22version%22%3A%22362%22%7D%2C%7B%22itemId%22%3A12000%2C%22region%22%3A%22KMS%22%2C%22version%22%3A%22362%22%7D/stand1/0?showears=false&amp;showLefEars=false&amp;showHighLefEars=undefined&amp;resize=1&amp;name=&amp;flipX=undefined" alt="" class="renderable-instance" draggable="false" style="position: relative; touch-action: none;">
-<img src="https://maplestory.io/api/character/%7B%22itemId%22%3A2018%2C%22region%22%3A%22KMS%22%2C%22version%22%3A%22362%22%7D%2C%7B%22itemId%22%3A12018%2C%22region%22%3A%22KMS%22%2C%22version%22%3A%22362%22%7D/stand1/0?showears=false&amp;showLefEars=false&amp;showHighLefEars=undefined&amp;resize=1&amp;name=&amp;flipX=undefined" alt="" class="renderable-instance" draggable="false" style="position: relative; touch-action: none;">
-<img src="${manne } alt="" class="renderable-instance" draggable="false" style="position: relative; touch-action: none;">
+<c:forEach var="mList" items="${mList }">
+ <div class="col mb-5">
+  <img src="${mList } alt="" class="renderable-instance" draggable="false" style="position: relative; touch-action: none;">
+ </div>
+</c:forEach>
+
+<form action="">
+<input type="text">
+<input type="submit" value="ddd">
+</form>
+
+
 <div class="demo">
         <div class="container">
             <div class="row text-center">

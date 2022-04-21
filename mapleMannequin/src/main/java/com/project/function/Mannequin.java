@@ -23,7 +23,7 @@ public class Mannequin {
 		allItemMap.put("Shoes", null);
 		allItemMap.put("Earring", null);
 		allItemMap.put("FaceA", null);
-		allItemMap.put("EarA", null);
+		allItemMap.put("EyeA", null);
 		allItemMap.put("Top", null);
 		allItemMap.put("Bottom", null);
 	}

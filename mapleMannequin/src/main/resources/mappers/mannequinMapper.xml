@@ -5,12 +5,9 @@
  
 <mapper namespace="com.mapleMannequin.mappers.memberMapper">
 
-	<insert id="insertMember">
+	<insert id="insertMannequin">
 		insert into member(id,pass,name,email,date,postcode,address,detail_address) values(#{id},#{pass},#{name},#{email},#{date},#{postcode},#{address},#{detail_address})
 	</insert>
 	
-	<update id="updateMember">
-		update member set name=#{name},email=#{email},postcode=#{postcode},address=#{address},detail_address=#{detail_address} where id=#{id}
-	</update>
 
 </mapper>
