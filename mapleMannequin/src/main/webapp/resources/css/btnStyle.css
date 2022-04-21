@@ -1,0 +1,75 @@
+.btn{
+    color: #fff;
+    border-radius: 50px;
+    text-transform: uppercase;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+.demo
+{
+	padding: 100px 0;
+}
+.heading-title
+{
+	margin-bottom: 100px;
+}
+.btn:hover{
+    color: #fff;
+}
+
+.btn:after{
+    content: "";
+    width: 120%;
+    height: 130%;
+    padding: 7px;
+    border-radius: 50px;
+    position: absolute;
+    top: -15%;
+    left: -10%;
+    opacity: 0;
+    transition: all 0.2s ease 0s;
+}
+
+.btn:hover:after{
+    opacity: 1;
+    width: 110%;
+    height: 120%;
+    top: -10%;
+    left: -5%;
+}
+
+.btn.red{
+    background: #fe6d6d;
+}
+
+.btn.red:after{
+    box-shadow: 0 0 0 2px #fe6d6d;
+}
+
+.btn.blue{
+    background: #5bbbf5;
+}
+
+.btn.blue:after{
+    box-shadow: 0 0 0 2px #5bbbf5;
+}
+
+.btn.orange{
+    background: #ee955b;
+}
+
+.btn.orange:after{
+    box-shadow: 0 0 0 2px #ee955b;
+}
+
+.btn.green{
+    background: #79d799;
+}
+
+.btn.green:after{
+    box-shadow: 0 0 0 2px #79d799;
+}
+
+@media only screen and (max-width: 767px){
+    .btn{ margin-bottom: 20px; }
+}
