@@ -7,19 +7,16 @@
 <meta charset="UTF-8">
 <title>Main : Maple Mannequin</title>
 <jsp:include page="inc/link.jsp"></jsp:include>
+<jsp:include page="inc/script.jsp"></jsp:include>
 <script type="text/javascript">
+	
  	$(document).ready(function() {
-		$('#idbtn').click(function(){
+		$('#change').click(function(){
 			$.ajax({
-				url:'${pageContext.request.contextPath }/userCheck',
-				data:{"id":$('#id').val()},
+				url:'${pageContext.request.contextPath }/getImg',
+				data:{"itemId":$('#itemId').val()},
 				success:function(rdata){
-					if(rdata=='iddup'){
-						rdata="아이디 중복";
-					}else{
-						rdata="아이디 사용가능"
-					}
-					$('#idmsg').html(rdata);
+					$('#imgDiv').html(imgSrc(rdata));
 				}
 			});
 		});
@@ -43,10 +40,10 @@
  </div>
 </c:forEach>
 
-<form action="">
-<input type="text">
-<input type="submit" value="ddd">
-</form>
+<div id="imgDiv" class="col-sm-3">
+</div>
+<input id="itemId" name="itemId" type="text">
+<button id="change" class="btn btn-lg red">모자</button>
 
 
 <div class="demo">
