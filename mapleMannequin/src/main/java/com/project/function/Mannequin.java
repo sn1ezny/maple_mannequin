@@ -40,7 +40,6 @@ public class Mannequin {
 			if (itemCode == null ? false : true) {
 				result+=getItemString(itemCode);
 			}
-//		    System.out.println("방법1) key : " + key +" / value : " + allItemSet.get(key));
 		}
 		return encodeURIComponent(result);
 	}

@@ -5,9 +5,13 @@
  
 <mapper namespace="com.mapleMannequin.mappers.memberMapper">
 
-	<insert id="insertMannequin">
-		insert into member(id,pass,name,email,date,postcode,address,detail_address) values(#{id},#{pass},#{name},#{email},#{date},#{postcode},#{address},#{detail_address})
+	<insert id="insertUser">
+		insert into user(id,user,password,name) values(#{id},#{user},#{password},#{name})
 	</insert>
+	
+	<select id="loginUser" resultType="com.project.data.userDTO">
+		select * from user where user=#{user} and password=#{password}
+	</select>
 	
 
 </mapper>

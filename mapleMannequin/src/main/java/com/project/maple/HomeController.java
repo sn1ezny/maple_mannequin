@@ -41,6 +41,13 @@ public class HomeController {
 		return "user/login";
 	}
 	
+	@RequestMapping(value = "/loginTry", method = RequestMethod.POST)
+	public String loginCheck() {
+		
+		
+		return "redirect:/main";
+	}
+	
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signUp() {
 		return "user/signUp";
