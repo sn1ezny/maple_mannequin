@@ -3,15 +3,23 @@ package com.project.maple;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.project.data.AccountDTO;
 import com.project.function.Mannequin;
+import com.project.service.MannequinService;
 
 @Controller
 public class MannequinController {
+	
+	@Inject
+	private MannequinService mannequinService; 
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
@@ -42,9 +50,23 @@ public class MannequinController {
 	}
 	
 	@RequestMapping(value = "/loginTry", method = RequestMethod.POST)
-	public String loginCheck() {
+	public String loginCheck(AccountDTO accountDTO, HttpSession session) {
+		System.out.println(accountDTO.getAccount());
+		System.out.println(accountDTO.getPassword());
 		
-		
+		AccountDTO accountInfo = mannequinService.loginAccount(accountDTO);
+		if (accountInfo != null) {
+			session.setAttribute("id", accountInfo.getId());
+			session.setAttribute("name", accountInfo.getName());
+			return "redirect:/main";
+		} else {
+			return "redirect:/login";
+		}
+	}
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session) {
+		session.invalidate();
 		return "redirect:/main";
 	}
 	

@@ -5,7 +5,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.project.dao.MannequinDAO;
-import com.project.data.UserDTO;
+import com.project.data.AccountDTO;
 
 @Service
 public class MannequinServiceImpl implements MannequinService {
@@ -14,8 +14,8 @@ public class MannequinServiceImpl implements MannequinService {
 	private MannequinDAO mannequinDAO;
 	
 	@Override
-	public UserDTO loginUser(UserDTO userDTO) {
-		return mannequinDAO.loginUser(userDTO);
+	public AccountDTO loginAccount(AccountDTO accountDTO) {
+		return mannequinDAO.loginAccount(accountDTO);
 	}
 
 }

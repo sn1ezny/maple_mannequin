@@ -1,9 +1,9 @@
 package com.project.dao;
 
-import com.project.data.UserDTO;
+import com.project.data.AccountDTO;
 
 public interface MannequinDAO {
 	
-	public UserDTO loginUser(UserDTO userDTO);
+	public AccountDTO loginAccount(AccountDTO accountDTO);
 	
 }

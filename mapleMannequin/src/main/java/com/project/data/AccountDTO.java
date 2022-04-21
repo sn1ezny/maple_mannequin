@@ -1,9 +1,9 @@
 package com.project.data;
 
-public class UserDTO {
+public class AccountDTO {
 	
 	private int id;
-	private String user;
+	private String account;
 	private String password;
 	private String name;
 	
@@ -13,11 +13,11 @@ public class UserDTO {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUser() {
-		return user;
+	public String getAccount() {
+		return account;
 	}
-	public void setUser(String user) {
-		this.user = user;
+	public void setAccount(String account) {
+		this.account = account;
 	}
 	public String getPassword() {
 		return password;

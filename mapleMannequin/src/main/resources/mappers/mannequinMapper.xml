@@ -3,14 +3,14 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-<mapper namespace="com.mapleMannequin.mappers.memberMapper">
+<mapper namespace="com.project.mappers.mannequinMapper">
 
-	<insert id="insertUser">
-		insert into user(id,user,password,name) values(#{id},#{user},#{password},#{name})
+	<insert id="insertAccount">
+		insert into account(id,account,password,name) values(#{id},#{account},#{password},#{name})
 	</insert>
 	
-	<select id="loginUser" resultType="com.project.data.userDTO">
-		select * from user where user=#{user} and password=#{password}
+	<select id="loginAccount" resultType="com.project.data.AccountDTO">
+		select * from account where account=#{account} and password=#{password}
 	</select>
 	
 

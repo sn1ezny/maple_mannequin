@@ -28,10 +28,17 @@
 
 </head>
 <body>
-
+<h1>${sessionScope.id }</h1>
 <div class="col-sm-3">
- <a href="${pageContext.request.contextPath }/login" class="btn btn-lg red">Sign in</a>
- <a href="${pageContext.request.contextPath }/signup" class="btn btn-lg red">Sign up</a>
+ <c:if test="${!empty sessionScope.id }">
+  <a href="${pageContext.request.contextPath }/logout" class="btn btn-lg red">Logout</a>
+ </c:if>
+ <c:if test="${empty sessionScope.id }">
+  <a href="${pageContext.request.contextPath }/login" class="btn btn-lg red">Sign in</a>
+  <a href="${pageContext.request.contextPath }/signup" class="btn btn-lg red">Sign up</a>
+ </c:if>
+ 
+ 
 </div>
 
 <h1>Maple Mannequin</h1>
