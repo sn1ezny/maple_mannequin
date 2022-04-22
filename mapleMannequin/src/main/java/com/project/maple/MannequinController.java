@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.project.data.AccountDTO;
-import com.project.data.MannequinDTO;
 import com.project.function.Mannequin;
 import com.project.service.MannequinService;
 

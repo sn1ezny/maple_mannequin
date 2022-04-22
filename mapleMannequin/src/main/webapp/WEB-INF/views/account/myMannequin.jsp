@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>My Mannequin : Maple Mannequin</title>
 </head>
 <body>
 <h1>내 마네킹 리스트 페이지</h1>
