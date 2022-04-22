@@ -52,8 +52,6 @@ public class MannequinController {
 	
 	@RequestMapping(value = "/loginTry", method = RequestMethod.POST)
 	public String loginCheck(AccountDTO accountDTO, HttpSession session) {
-		System.out.println(accountDTO.getAccount());
-		System.out.println(accountDTO.getPassword());
 		
 		AccountDTO accountInfo = mannequinService.loginAccount(accountDTO);
 		if (accountInfo != null) {
@@ -81,5 +79,6 @@ public class MannequinController {
 		model.addAttribute("mList", mannequinService.getMannequinList(1));
 		return "account/myMannequin";
 	}
+	
 	
 }
