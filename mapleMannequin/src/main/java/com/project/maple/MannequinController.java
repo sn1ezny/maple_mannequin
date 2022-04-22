@@ -1,6 +1,5 @@
 package com.project.maple;
 
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -78,13 +77,22 @@ public class MannequinController {
 	}
 	
 	@RequestMapping(value = "/myMannequin", method = RequestMethod.GET)
-	public String myMannequin(Model model) {
+	public String myMannequin(Model model, HttpSession session) {
 		MannequinDTO mannequinDTO = mannequinService.getMannequin(1);
-		
 		Mannequin mannequin = new Mannequin();
-		mannequin.SetMannequin(mannequinDTO);
-		
+		mannequin.setMannequin(mannequinDTO);
 		model.addAttribute("manne1", mannequin.getMannequin());
+		
+		List<MannequinDTO> mannequinDTOList = mannequinService.getMannequinList(1);
+		LinkedList<String> mannequinList = new LinkedList<String>();
+		
+		for (MannequinDTO mannequin1DTO : mannequinDTOList) {
+			mannequin.setMannequin(mannequin1DTO);
+			mannequinList.add(mannequin.getMannequin());
+		}
+		
+		model.addAttribute("mList", mannequinList);
+		
 		
 		return "account/myMannequin";
 	}

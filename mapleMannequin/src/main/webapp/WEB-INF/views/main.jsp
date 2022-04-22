@@ -45,7 +45,7 @@
 
 <c:forEach var="mList" items="${mList }">
  <div class="col mb-5">
-  <img src="${mList } alt="" class="renderable-instance" draggable="false" style="position: relative; touch-action: none;">
+  <img src="${mList }" alt="" class="renderable-instance" draggable="false" style="position: relative; touch-action: none;">
  </div>
 </c:forEach>
 

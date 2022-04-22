@@ -17,5 +17,9 @@
 		select * from mannequin where id=#{id}
 	</select>
 	
+	<select id="getMannequinList" resultType="com.project.data.MannequinDTO">
+		select * from mannequin where account_id=#{account_id}
+	</select>
+	
 
 </mapper>

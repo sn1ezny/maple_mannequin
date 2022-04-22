@@ -35,7 +35,7 @@ public class Mannequin {
 		return getImgSrc(getSkinString(defaultSkin),getAllItem(),defaultPos);
 	}
 	
-	public void SetMannequin(MannequinDTO mannequinDTO) {
+	public void setMannequin(MannequinDTO mannequinDTO) {
 		setDefaultSkin(mannequinDTO.getSkin());
 		allItemMap.put("Hair", mannequinDTO.getHair());
 		allItemMap.put("Face", mannequinDTO.getFace());
