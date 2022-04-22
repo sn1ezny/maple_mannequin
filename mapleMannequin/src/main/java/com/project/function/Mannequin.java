@@ -40,7 +40,9 @@ public class Mannequin {
 	}
 	
 	public void setMannequin(MannequinDTO mannequinDTO) {
-		setDefaultSkin(mannequinDTO.getSkin());
+		if (mannequinDTO.getSkin()!=0) {
+			setDefaultSkin(mannequinDTO.getSkin());
+		}
 		allItemMap.put("Hair", mannequinDTO.getHair());
 		allItemMap.put("Face", mannequinDTO.getFace());
 		allItemMap.put("Overall", mannequinDTO.getOverall());

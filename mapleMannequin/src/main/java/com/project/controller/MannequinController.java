@@ -82,7 +82,11 @@ public class MannequinController {
 	
 	@RequestMapping(value = "/myMannequin", method = RequestMethod.GET)
 	public String myMannequin(Model model, HttpSession session) {
-		model.addAttribute("mList", mannequinService.getMannequinList(1));
+		Object o_id = session.getAttribute("id");
+		if (o_id != null) {
+			int session_id = (int) o_id;
+			model.addAttribute("mList", mannequinService.getMannequinList(session_id));
+		}
 		return "account/myMannequin";
 	}
 	
