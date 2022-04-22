@@ -1,4 +1,4 @@
-package com.project.maple;
+package com.project.controller;
 
 import javax.servlet.http.HttpServletRequest;
 

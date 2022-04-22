@@ -1,4 +1,4 @@
-package com.project.maple;
+package com.project.controller;
 
 import java.util.LinkedList;
 import java.util.List;
