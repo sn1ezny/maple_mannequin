@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+ <nav>
+  <img src="https://maplestory.io/api/KMS/362/item/20056/icon" id="20056">
+ </nav>
 </body>
 </html>

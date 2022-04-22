@@ -18,6 +18,7 @@ public class Mannequin {
 	LinkedHashMap<String, Integer> allItemMap = new LinkedHashMap<String, Integer>();
 	
 	public Mannequin() {
+		//마네킹 이름, 성별 추가
 		allItemMap.put("Hair", null);
 		allItemMap.put("Face", null);
 		allItemMap.put("Overall", null);

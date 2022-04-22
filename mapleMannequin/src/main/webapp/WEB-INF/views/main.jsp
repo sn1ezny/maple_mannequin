@@ -37,7 +37,7 @@
   <a href="${pageContext.request.contextPath }/login" class="btn btn-lg red">Sign in</a>
   <a href="${pageContext.request.contextPath }/signup" class="btn btn-lg red">Sign up</a>
  </c:if>
- 
+ <a href="${pageContext.request.contextPath }/simulator" class="btn btn-lg red">simulator</a>
  
 </div>
 

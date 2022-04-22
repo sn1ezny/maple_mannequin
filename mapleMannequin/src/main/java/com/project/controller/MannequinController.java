@@ -73,10 +73,22 @@ public class MannequinController {
 		return "account/signUp";
 	}
 	
+	@RequestMapping(value = "/signUpTry", method = RequestMethod.POST)
+	public String signUpTry(AccountDTO accountDTO) {
+		
+		return "redirect:/main";
+		
+	}
+	
 	@RequestMapping(value = "/myMannequin", method = RequestMethod.GET)
 	public String myMannequin(Model model, HttpSession session) {
 		model.addAttribute("mList", mannequinService.getMannequinList(1));
 		return "account/myMannequin";
+	}
+	
+	@RequestMapping(value = "/simulator", method = RequestMethod.GET)
+	public String simulator(Model model, HttpSession session) {
+		return "simulator/simulator";
 	}
 	
 	
