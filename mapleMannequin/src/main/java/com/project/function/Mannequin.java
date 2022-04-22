@@ -4,8 +4,11 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 
+import org.springframework.stereotype.Service;
+
 import com.project.data.MannequinDTO;
 
+@Service
 public class Mannequin {
 	
 	final static int MAPLE_VERSION = 362;

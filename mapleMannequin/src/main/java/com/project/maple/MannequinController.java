@@ -20,7 +20,7 @@ import com.project.service.MannequinService;
 public class MannequinController {
 	
 	@Inject
-	private MannequinService mannequinService; 
+	private MannequinService mannequinService;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
@@ -78,22 +78,7 @@ public class MannequinController {
 	
 	@RequestMapping(value = "/myMannequin", method = RequestMethod.GET)
 	public String myMannequin(Model model, HttpSession session) {
-		MannequinDTO mannequinDTO = mannequinService.getMannequin(1);
-		Mannequin mannequin = new Mannequin();
-		mannequin.setMannequin(mannequinDTO);
-		model.addAttribute("manne1", mannequin.getMannequin());
-		
-		List<MannequinDTO> mannequinDTOList = mannequinService.getMannequinList(1);
-		LinkedList<String> mannequinList = new LinkedList<String>();
-		
-		for (MannequinDTO mannequin1DTO : mannequinDTOList) {
-			mannequin.setMannequin(mannequin1DTO);
-			mannequinList.add(mannequin.getMannequin());
-		}
-		
-		model.addAttribute("mList", mannequinList);
-		
-		
+		model.addAttribute("mList", mannequinService.getMannequinList(1));
 		return "account/myMannequin";
 	}
 	
