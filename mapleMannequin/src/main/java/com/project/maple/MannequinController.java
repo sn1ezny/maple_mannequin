@@ -1,5 +1,6 @@
 package com.project.maple;
 
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.project.data.AccountDTO;
+import com.project.data.MannequinDTO;
 import com.project.function.Mannequin;
 import com.project.service.MannequinService;
 
@@ -76,7 +78,27 @@ public class MannequinController {
 	}
 	
 	@RequestMapping(value = "/myMannequin", method = RequestMethod.GET)
-	public String myMannequin() {
+	public String myMannequin(Model model) {
+		MannequinDTO mannequinDTO = mannequinService.getMannequin(1);
+		
+		Mannequin mannequin = new Mannequin();
+		mannequin.setDefaultSkin(mannequinDTO.getSkin());
+		LinkedHashMap<String, Integer> mannequinItemSet = mannequin.getAllItemSet();
+		mannequinItemSet.put("Hair", mannequinDTO.getHair());
+		mannequinItemSet.put("Face", mannequinDTO.getFace());
+		mannequinItemSet.put("Overall", mannequinDTO.getOverall());
+		mannequinItemSet.put("Hat", mannequinDTO.getHat());
+		mannequinItemSet.put("Cape", mannequinDTO.getCape());
+		mannequinItemSet.put("Cash", mannequinDTO.getCash());
+		mannequinItemSet.put("Glove", mannequinDTO.getGlove());
+		mannequinItemSet.put("Shoes", mannequinDTO.getShoes());
+		mannequinItemSet.put("Earring", mannequinDTO.getEarring());
+		mannequinItemSet.put("FaceA", mannequinDTO.getFacea());
+		mannequinItemSet.put("EyeA", mannequinDTO.getEyea());
+		mannequinItemSet.put("Top", mannequinDTO.getTop());
+		mannequinItemSet.put("Bottom", mannequinDTO.getBottom());
+		
+		model.addAttribute("manne1", mannequin.getMannequin());
 		
 		return "account/myMannequin";
 	}

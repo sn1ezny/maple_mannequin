@@ -36,8 +36,7 @@ public class MannequinDAOImpl implements MannequinDAO{
 
 	@Override
 	public MannequinDTO getMannequin(int mannequinId) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne(namespace+".getMannequin", mannequinId);
 	}
 
 	@Override

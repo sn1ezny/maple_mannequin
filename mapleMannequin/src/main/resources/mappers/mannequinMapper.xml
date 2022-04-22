@@ -13,5 +13,9 @@
 		select * from account where account=#{account} and password=#{password}
 	</select>
 	
+	<select id="getMannequin" resultType="com.project.data.MannequinDTO">
+		select * from mannequin where id=#{id}
+	</select>
+	
 
 </mapper>

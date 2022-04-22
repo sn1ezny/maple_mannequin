@@ -8,5 +8,7 @@
 </head>
 <body>
 <h1>내 마네킹 리스트 페이지</h1>
+
+<img src="${manne1 } alt="" class="renderable-instance" draggable="false" style="position: relative; touch-action: none;">
 </body>
 </html>
