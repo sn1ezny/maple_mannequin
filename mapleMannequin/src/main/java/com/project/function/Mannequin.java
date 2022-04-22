@@ -4,6 +4,8 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.LinkedHashMap;
 
+import com.project.data.MannequinDTO;
+
 public class Mannequin {
 	
 	final static int MAPLE_VERSION = 362;
@@ -31,6 +33,23 @@ public class Mannequin {
 	
 	public String getMannequin() {
 		return getImgSrc(getSkinString(defaultSkin),getAllItem(),defaultPos);
+	}
+	
+	public void SetMannequin(MannequinDTO mannequinDTO) {
+		setDefaultSkin(mannequinDTO.getSkin());
+		allItemMap.put("Hair", mannequinDTO.getHair());
+		allItemMap.put("Face", mannequinDTO.getFace());
+		allItemMap.put("Overall", mannequinDTO.getOverall());
+		allItemMap.put("Hat", mannequinDTO.getHat());
+		allItemMap.put("Cape", mannequinDTO.getCape());
+		allItemMap.put("Cash", mannequinDTO.getCash());
+		allItemMap.put("Glove", mannequinDTO.getGlove());
+		allItemMap.put("Shoes", mannequinDTO.getShoes());
+		allItemMap.put("Earring", mannequinDTO.getEarring());
+		allItemMap.put("FaceA", mannequinDTO.getFacea());
+		allItemMap.put("EyeA", mannequinDTO.getEyea());
+		allItemMap.put("Top", mannequinDTO.getTop());
+		allItemMap.put("Bottom", mannequinDTO.getBottom());
 	}
 	
 	public String getAllItem() {
