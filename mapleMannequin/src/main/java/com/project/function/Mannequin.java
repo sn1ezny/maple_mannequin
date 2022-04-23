@@ -34,6 +34,10 @@ public class Mannequin {
 		allItemMap.put("Bottom", null);
 	}
 	
+	private void getEquip() {
+		String link= "https://maplestory.io/api/" + REGION + "/" + MAPLE_VERSION + "/item/category/equip";
+	}
+	
 	
 	public String getMannequin() {
 		return getImgSrc(getSkinString(defaultSkin),getAllItem(),defaultPos);
