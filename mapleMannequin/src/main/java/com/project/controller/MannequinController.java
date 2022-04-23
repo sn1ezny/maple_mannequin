@@ -1,8 +1,5 @@
 package com.project.controller;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -11,8 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.handling.img.ApiHandler;
 import com.project.data.AccountDTO;
-import com.project.function.Mannequin;
+import com.project.data.MannequinDTO;
 import com.project.service.MannequinService;
 
 @Controller
@@ -27,7 +25,11 @@ public class MannequinController {
 	}
 	
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String main(Model model) {	
+	public String main(Model model) {
+		MannequinDTO mDTO = mannequinService.getMannequin(1);
+		ApiHandler a = new ApiHandler();
+		model.addAttribute("src", a.getSB(mDTO));
+		
 		return "main";
 	}
 	

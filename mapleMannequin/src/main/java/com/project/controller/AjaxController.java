@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.project.function.Mannequin;
-
 
 @RestController
 public class AjaxController {
@@ -18,15 +16,15 @@ public class AjaxController {
 	@RequestMapping(value = "/getImg", method = RequestMethod.GET)
 	public ResponseEntity<String> getImg(HttpServletRequest request){
 		String result = "";
-		String id = request.getParameter("itemId");
-		String equipName = request.getParameter("equipName");
-		Mannequin mannequin2 = new Mannequin();
-		mannequin2.setDefaultSkin(2016);
-		
-		if (mannequin2.getAllItemSet().containsKey(equipName)) {
-			mannequin2.getAllItemSet().put(equipName, Integer.parseInt(id));
-		}
-		result = mannequin2.getMannequin();
+//		String id = request.getParameter("itemId");
+//		String equipName = request.getParameter("equipName");
+//		Mannequin mannequin2 = new Mannequin();
+//		mannequin2.setDefaultSkin(2016);
+//		
+//		if (mannequin2.getAllItemSet().containsKey(equipName)) {
+//			mannequin2.getAllItemSet().put(equipName, Integer.parseInt(id));
+//		}
+//		result = mannequin2.getMannequin();
 		
 		ResponseEntity<String> entity = new ResponseEntity<String>(result, HttpStatus.OK);
 		

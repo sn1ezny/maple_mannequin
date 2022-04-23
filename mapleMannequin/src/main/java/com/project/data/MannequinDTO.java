@@ -17,7 +17,8 @@ public class MannequinDTO {
 	private int eyea;
 	private int top;
 	private int bottom;
-	private int skin;
+	private int skin = 2000;
+	private String pos = "stand1";
 	
 	public int getId() {
 		return id;
@@ -114,6 +115,12 @@ public class MannequinDTO {
 	}
 	public void setSkin(int skin) {
 		this.skin = skin;
+	}
+	public String getPos() {
+		return pos;
+	}
+	public void setPos(String pos) {
+		this.pos = pos;
 	}
 	
 }

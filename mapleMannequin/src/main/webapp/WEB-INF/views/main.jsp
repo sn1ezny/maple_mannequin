@@ -42,12 +42,12 @@
 </div>
 
 <h1>Maple Mannequin</h1>
-
-<c:forEach var="mList" items="${mList }">
- <div class="col mb-5">
-  <img src="${mList }" alt="" class="renderable-instance" draggable="false" style="position: relative; touch-action: none;">
- </div>
-</c:forEach>
+<h1>${src }</h1>
+<%-- <c:forEach var="mList" items="${mList }"> --%>
+<!--  <div class="col mb-5"> -->
+<%--   <img src="${mList }" alt="" class="renderable-instance" draggable="false" style="position: relative; touch-action: none;"> --%>
+<!--  </div> -->
+<%-- </c:forEach> --%>
 
 <div id="imgDiv" class="col-sm-3">
 </div>

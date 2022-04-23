@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import com.project.dao.MannequinDAO;
 import com.project.data.AccountDTO;
 import com.project.data.MannequinDTO;
-import com.project.function.Mannequin;
 
 @Service
 public class MannequinServiceImpl implements MannequinService {
@@ -44,10 +43,10 @@ public class MannequinServiceImpl implements MannequinService {
 		List<MannequinDTO> mannequinList = mannequinDAO.getMannequinList(sessionId);
 		LinkedList<String> imgSrcList = new LinkedList<String>();
 		
-		for (MannequinDTO mDTO : mannequinList) {
-			mannequin.setMannequin(mDTO);
-			imgSrcList.add(mannequin.getMannequin());
-		}
+//		for (MannequinDTO mDTO : mannequinList) {
+//			mannequin.setMannequin(mDTO);
+//			imgSrcList.add(mannequin.getMannequin());
+//		}
 		
 		return imgSrcList;
 	}
