@@ -27,20 +27,7 @@ public class MannequinController {
 	}
 	
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String main(Model model) {
-		List<String> mannequinList = new LinkedList<String>();
-		
-		Mannequin mannequin = new Mannequin();
-		mannequin.getAllItemSet().put("Hat", 1002140);
-		mannequin.getAllItemSet().put("FaceA", 1012083);
-		mannequinList.add(mannequin.getMannequin());
-		
-		Mannequin mannequin2 = new Mannequin();
-		mannequin2.setDefaultSkin(2016);
-		mannequinList.add(mannequin2.getMannequin());
-		
-		model.addAttribute("mList", mannequinList);
-		
+	public String main(Model model) {	
 		return "main";
 	}
 	

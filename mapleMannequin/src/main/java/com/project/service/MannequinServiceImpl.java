@@ -18,9 +18,6 @@ public class MannequinServiceImpl implements MannequinService {
 	@Inject
 	private MannequinDAO mannequinDAO;
 	
-	@Inject
-	private Mannequin mannequin;
-	
 	@Override
 	public AccountDTO loginAccount(AccountDTO accountDTO) {
 		return mannequinDAO.loginAccount(accountDTO);

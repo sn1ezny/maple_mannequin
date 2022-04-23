@@ -1,18 +1,11 @@
-package com.project.function;
+package com.handling.mannequin;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.LinkedHashMap;
-
-import org.springframework.stereotype.Service;
 
 import com.project.data.MannequinDTO;
 
-@Service
-public class Mannequin {
+public class MannequinHandler {
 	
-	final static int MAPLE_VERSION = 362;
-	final static String REGION = "KMS";
 	int defaultSkin = 2000;
 	String defaultPos = "stand1";
 	LinkedHashMap<String, Integer> allItemMap = new LinkedHashMap<String, Integer>();
@@ -33,11 +26,6 @@ public class Mannequin {
 		allItemMap.put("Top", null);
 		allItemMap.put("Bottom", null);
 	}
-	
-	private void getEquip() {
-		String link= "https://maplestory.io/api/" + REGION + "/" + MAPLE_VERSION + "/item/category/equip";
-	}
-	
 	
 	public String getMannequin() {
 		return getImgSrc(getSkinString(defaultSkin),getAllItem(),defaultPos);
@@ -62,33 +50,6 @@ public class Mannequin {
 		allItemMap.put("Bottom", mannequinDTO.getBottom());
 	}
 	
-	public String getAllItem() {
-		String result = "";
-		for (String key : allItemMap.keySet()) {
-			Integer itemCode = allItemMap.get(key);
-			if (itemCode == null ? false : true) {
-				result+=getItemString(itemCode);
-			}
-		}
-		return encodeURIComponent(result);
-	}
-	
-	public String getImgSrc(String skin, String item, String pos) {
-		return "https://maplestory.io/api/Character/" + skin + item + "/" + pos + "/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0";
-	}
-	
-	public String getSkinString(int skinCode) {
-		String result = "";
-		result = encodeURIComponent(
-				"{\"itemId\":" + skinCode + ",\"version\":\"" + MAPLE_VERSION + "\",\"region\":\"" + REGION + "\"},"
-				+ "{\"itemId\":" + (skinCode+10000) + ",\"version\":\"" + MAPLE_VERSION + "\",\"region\":\"" + REGION + "\"}");
-		return result;
-	}
-	
-	public String getItemString(int itemCode) {
-		return ",{\"itemId\":" + itemCode + ",\"version\":\"" + MAPLE_VERSION + "\",\"region\":\"" + REGION + "\"}";
-	}
-	
 	public int getDefaultSkin() {
 		return defaultSkin;
 	}
@@ -108,23 +69,4 @@ public class Mannequin {
 	public LinkedHashMap<String, Integer> getAllItemSet() {
 		return allItemMap;
 	}
-
-	public static String encodeURIComponent(String s) {
-		String result = null;
-		try {
-			result = URLEncoder.encode(s, "UTF-8")
-							   .replaceAll("\\+", "%20")
-							   .replaceAll("\\%21", "!")
-							   .replaceAll("\\%27", "'")
-						  	   .replaceAll("\\%28", "(")
-						  	   .replaceAll("\\%29", ")")
-						  	   .replaceAll("\\%7E", "~");
-		}
-		
-		catch (UnsupportedEncodingException e) {
-			result = s;
-		}
-		return result;
-	}
-	
 }
