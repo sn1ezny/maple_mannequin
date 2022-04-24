@@ -28,6 +28,7 @@
 </head>
 <body>
 <h1>${sessionScope.id }</h1>
+<h1>${sessionScope.name }님으로 접속 중입니다.</h1>
 <div class="col-sm-6">
  <c:if test="${!empty sessionScope.id }">
   <a href="${pageContext.request.contextPath }/logout" class="btn btn-lg red">Logout</a>
@@ -42,18 +43,14 @@
 </div>
 
 <h1>Maple Mannequin</h1>
-<h1>${src }</h1>
-<%-- <c:forEach var="mList" items="${mList }"> --%>
-<!--  <div class="col mb-5"> -->
-<%--   <img src="${mList }" alt="" class="renderable-instance" draggable="false" style="position: relative; touch-action: none;"> --%>
-<!--  </div> -->
-<%-- </c:forEach> --%>
+<img src="${src }" alt="" class="renderable-instance" draggable="false" style="position: relative; touch-action: none;">
 
-<div id="imgDiv" class="col-sm-3">
-</div>
-<input id="equipName" name="equipName" type="text" placeholder="eq">
-<input id="itemId" name="itemId" type="text" placeholder="cod">
-<button id="change" class="btn btn-lg red">모자</button>
+
+<!-- <div id="imgDiv" class="col-sm-3"> -->
+<!-- </div> -->
+<!-- <input id="equipName" name="equipName" type="text" placeholder="eq"> -->
+<!-- <input id="itemId" name="itemId" type="text" placeholder="cod"> -->
+<!-- <button id="change" class="btn btn-lg red">모자</button> -->
 
 </body>
 </html>

@@ -8,14 +8,7 @@ public class ApiHandler {
 	final static int MAPLE_VERSION = 362;
 	final static String REGION = "KMS";
 	
-	public String getCharImg(String skin, String item, String pos) {
-		//skin = getSkinData, item = getItemDataList
-		return "https://maplestory.io/api/Character/" + skin + item + "/" + pos + "/0?showears=false&showLefEars=false&showHighLefEars=undefined&resize=1&name=&flipX=false&bgColor=0,0,0,0";
-	}
-	//sb.setLength(sb.length() - 1);
-	
-	
-	public StringBuilder getSB(MannequinDTO mannequinDTO) {
+	public StringBuilder getMannequinImgSrc(MannequinDTO mannequinDTO) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("https://maplestory.io/api/Character/");
 		sb.append(EncodeHandler.encodeURIComponent(getSkinData(mannequinDTO.getSkin()).toString()));
@@ -62,7 +55,7 @@ public class ApiHandler {
 			sb.append(MAPLE_VERSION);
 			sb.append("\",\"region\":\"");
 			sb.append(REGION);
-			sb.append("\"},"); // 마지막 구문이 , 면 지우기 만드세요
+			sb.append("\"},");
 		}
 		return sb;
 	}

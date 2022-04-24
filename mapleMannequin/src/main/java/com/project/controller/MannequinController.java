@@ -1,5 +1,8 @@
 package com.project.controller;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -18,6 +21,7 @@ public class MannequinController {
 	
 	@Inject
 	private MannequinService mannequinService;
+	private ApiHandler api = new ApiHandler();
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index() {
@@ -27,8 +31,7 @@ public class MannequinController {
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String main(Model model) {
 		MannequinDTO mDTO = mannequinService.getMannequin(1);
-		ApiHandler a = new ApiHandler();
-		model.addAttribute("src", a.getSB(mDTO));
+		model.addAttribute("src", api.getMannequinImgSrc(mDTO));
 		
 		return "main";
 	}
@@ -64,7 +67,6 @@ public class MannequinController {
 	
 	@RequestMapping(value = "/signUpTry", method = RequestMethod.POST)
 	public String signUpTry(AccountDTO accountDTO) {
-		
 		return "redirect:/main";
 		
 	}
@@ -74,7 +76,13 @@ public class MannequinController {
 		Object o_id = session.getAttribute("id");
 		if (o_id != null) {
 			int session_id = (int) o_id;
-			model.addAttribute("mList", mannequinService.getMannequinList(session_id));
+			List<MannequinDTO> mList = mannequinService.getMannequinList(session_id);
+			List<StringBuilder> mString = new LinkedList<StringBuilder>();
+			for (MannequinDTO mDTO : mList) {
+				mString.add(api.getMannequinImgSrc(mDTO));
+			}
+			
+			model.addAttribute("mString", mString);
 		}
 		return "account/myMannequin";
 	}

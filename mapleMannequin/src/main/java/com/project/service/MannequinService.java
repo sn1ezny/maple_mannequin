@@ -11,6 +11,6 @@ public interface MannequinService {
 	public void insertAccount(AccountDTO accountDTO);
 	public AccountDTO getAccount(int sessionId);
 	public MannequinDTO getMannequin(int mannequinId);
-	public List<String> getMannequinList(int sessionId);
+	public List<MannequinDTO> getMannequinList(int sessionId);
 	
 }

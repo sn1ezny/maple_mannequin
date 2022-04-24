@@ -27,12 +27,12 @@
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
         
-        <c:forEach var="mList" items="${mList }">
+        <c:forEach var="mString" items="${mString }">
         	<div class="col mb-5">
 			    <div class="card h-100">
 			        <div class="card-body p-4">
 			        <div class="center">
-			        <img src="${mList }" alt="img" class="renderable-instance" draggable="false" style="position: relative; touch-action: none;">
+			        <img src="${mString }" alt="img" class="renderable-instance" draggable="false" style="position: relative; touch-action: none;">
 			        </div>
 			            <div class="text-center">
 			                <!-- Product name-->

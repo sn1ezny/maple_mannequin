@@ -38,17 +38,8 @@ public class MannequinServiceImpl implements MannequinService {
 	}
 
 	@Override
-	public List<String> getMannequinList(int sessionId) {
-		
-		List<MannequinDTO> mannequinList = mannequinDAO.getMannequinList(sessionId);
-		LinkedList<String> imgSrcList = new LinkedList<String>();
-		
-//		for (MannequinDTO mDTO : mannequinList) {
-//			mannequin.setMannequin(mDTO);
-//			imgSrcList.add(mannequin.getMannequin());
-//		}
-		
-		return imgSrcList;
+	public List<MannequinDTO> getMannequinList(int sessionId) {
+		return mannequinDAO.getMannequinList(sessionId);
 	}
 	
 	
