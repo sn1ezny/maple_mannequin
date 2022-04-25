@@ -22,6 +22,24 @@
 			});
 		});
  	});
+ 	
+ 	$(document).ready(function(){
+		$('#btn').click(function(){
+ 			alert("클릭");
+ 			$.ajax({
+				url:'https://maplestory.io/api/KMS/362/item/category/equip',
+				type: 'get',
+				dataType:'json',
+				success:function(rdata){
+					$.each(rdata,function(index,item){
+						alert(item.name);
+					});
+					
+				}
+			});
+		});
+	});//
+ 	
  </script>
 
 
@@ -51,6 +69,9 @@
 <!-- <input id="equipName" name="equipName" type="text" placeholder="eq"> -->
 <!-- <input id="itemId" name="itemId" type="text" placeholder="cod"> -->
 <!-- <button id="change" class="btn btn-lg red">모자</button> -->
+<button id="btn" class="btn btn-lg red">모자</button>
+
+
 
 </body>
 </html>
